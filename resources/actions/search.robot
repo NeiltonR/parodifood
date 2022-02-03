@@ -14,7 +14,7 @@ Choose Restaurant
 
     Click       text=${super_var["restaurant"]}
 
-    Wait For Elements State         css=#detail     visible     10
+    Wait For Elements State         css=#detail     visible     ${DEFAULT_TIMEOUT}
     Get Text    css=#detail     contains        ${super_var["desc"]}
 
 Search By
@@ -27,12 +27,12 @@ Restaurant Should Be Visible
     #Only waiting image for screenshot
     Sleep   1.5
     Set Strict Mode     False
-    Wait For Elements State     ${DIV_BOX_RESTAURANT}     visible     10
+    Wait For Elements State     ${DIV_BOX_RESTAURANT}     visible     ${DEFAULT_TIMEOUT}
     Get Text                    ${DIV_BOX_RESTAURANT}     contains    ${name}
 
 Restaurant Count Should Be
     [Arguments]     ${qtd}
     #Only waiting image for screenshot
     Sleep   1.5
-    Wait For Elements State     ${DIV_BOX_RESTAURANT}     Visible     10
+    Wait For Elements State     ${DIV_BOX_RESTAURANT}     Visible     ${DEFAULT_TIMEOUT}
     Get Element Count           ${DIV_BOX_RESTAURANT}     equal       ${qtd}
